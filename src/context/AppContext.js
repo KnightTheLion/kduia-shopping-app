@@ -75,7 +75,7 @@ export const AppProvider = (props) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
   const totalExpenses = state.expenses.reduce((total, item) => {
-    return (total += item.unitprice * item.quantity);
+    return (total += (item.unitprice * item.quantity));
   }, 0);
   state.CartValue = totalExpenses;
 
